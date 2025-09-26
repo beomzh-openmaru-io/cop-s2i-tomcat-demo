@@ -11,7 +11,21 @@ import java.io.IOException;
 public class AppServlet extends HttpServlet {
     private final GreetingService greetingService = new GreetingService();
 
-    // POST 요청 처리 (폼 제출)
+    /**
+     * GET 요청을 처리하는 메서드 (브라우저에서 직접 URL을 입력했을 때)
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // GET 요청이 오면 입력 폼(index.jsp)으로 보내줍니다.
+        // 이 부분을 구현하지 않으면 405 에러가 발생할 수 있습니다.
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    /**
+     * POST 요청을 처리하는 메서드 (폼을 제출했을 때)
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

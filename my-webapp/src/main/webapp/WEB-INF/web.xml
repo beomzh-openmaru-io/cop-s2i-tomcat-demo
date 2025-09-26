@@ -10,7 +10,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
+        <servlet-name>AppServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 

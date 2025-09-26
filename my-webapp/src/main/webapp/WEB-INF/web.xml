@@ -11,7 +11,7 @@
 
     <servlet-mapping>
         <servlet-name>AppServlet</servlet-name>
-        <url-pattern>/api/*</url-pattern>
+        <servlet-class>com.openmaru.controller.AppServlet</servlet-class>
     </servlet-mapping>
 
     <welcome-file-list>

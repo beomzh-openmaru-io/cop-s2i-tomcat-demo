@@ -9,14 +9,21 @@
         <servlet-class>com.openmaru.controller.AppServlet</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>AppServlet</servlet-name>
-        <servlet-class>com.openmaru.controller.AppServlet</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>AppServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>app</servlet-name> 
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring/app-config.xml</param-value> </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app</servlet-name>
+        <url-pattern>/</url-pattern> 
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

@@ -3,6 +3,7 @@ package com.openmaru.controller;
 import com.openmaru.service.GreetingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AppController {
 
-     @Autowired // 스프링! 주방장(GreetingService)을 여기 자동으로 연결해줘!
-    private GreetingService greetingService; // 주방장을 호출할 준비 완료
+     @Autowired 
+    private GreetingService greetingService; 
 
     /**
      * GET / 요청을 처리 (폼을 보여주는 역할)
@@ -26,7 +27,7 @@ public class AppController {
      */
     @PostMapping("/api")
     public String handleGreeting(@RequestParam("name") String name, Model model) {
-        // 1. @RequestParam으로 파라미터 받기 (더 간결함)
+        // 1. @RequestParam으로 파라미터 받기 
         // 2. 서비스 로직 호출
         String greetingMessage = greetingService.createGreeting(name);
 

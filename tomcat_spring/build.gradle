@@ -8,6 +8,8 @@ plugins {
 group = 'com.openmaru'
 version = '0.0.1-SNAPSHOT'
 description = 'Demo project for Spring Boot'
+sourceCompatibility = '17'
+
 
 java {
 	toolchain {
